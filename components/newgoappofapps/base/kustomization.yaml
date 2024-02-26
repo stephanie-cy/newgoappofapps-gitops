@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:         
+  argocd/app-name: newgoappofapps
+  janus-idp.io/tekton: newgoappofapps
+  backstage.io/kubernetes-id: newgoappofapps
+  backstage.io/kubernetes-namespace: target-ns 
+  app.kubernetes.io/part-of: newgoappofapps
+resources: 
+- deployment.yaml
+- route.yaml
+- service.yaml
